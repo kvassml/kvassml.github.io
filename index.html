@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Служебная информация -->
+    <title>TestQA</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link type="text/css" rel="stylesheet" href="./css/demo.css">
+    <link type="text/css" rel="stylesheet" href="./css/jquery-te-1.4.0.css">
+  </head>
+  <body>
+    <!-- Содержание -->
+      <div class="flexcontair">
+        <div class="headdiv"><div><iframe style="width: 100%;height: 254px;border-radius: 0;" src="//sekundomer.net/?widget=true&name=&bg=1d4671&bgBody=e8e8e8&colorH1=595959&pattern=none&cr=show&nb=show" frameborder="0"></iframe>
+        </div></div>
+      </div>
+    <div class="flexcontainer">
+      <div class="conteyner1">
+        <div class="verstka"><h3 class="nametexta">Верстка:</h3>
+          <div><textarea id="input1"/></textarea></div>
+          <br>
+          </div>
+          
+          <div class="manager"><h3 class="nametexta">Менеджмент:</h3>
+            <div><textarea id="input2" /></textarea></div>
+            <br>
+          </div>
+          
+          <div class="prog"><h3 class="nametexta">Программинг:</h3>
+            <div><textarea id="input3" /></textarea></div><br>
+          </div>
+      </div>
+      <div class="conteyner2">
+      
+        <div class="sumpole"><h3 class="nametexta">Общий список:</h3>
+        <div><textarea id="input4" class="jqte-test"></textarea></div>
+        <div class = "flexcontainer_button">
+        <button id="open_but" onclick = "onchek()" style="display:block;"
+            >Показать Чек-Лист</button>
+            <button id="cloce_but" onclick = "ofchek()" style="display:none;"
+            >Скрыть Чек-Лист</button>
+            <button id='clear' onclick = "clearfun()">Очистить</button>
+          </div>
+            
+        <div id="stelsdiv" style="display:none;"> 
+          <div class="chek-list">
+                      <table id="table" class="demotable">
+              <p>Чек-лист Проверок</p>
+                <!-- 1Cтрока tr , th - столбца--> 
+                <tr>
+                    <td><textarea id="textarea" class="textarea5"/></textarea></td>
+                    <td><input type="checkbox" name="enabled"></td>
+                </tr>
+            </table>
+            <button id='addsttable' onclick = "addelemets()">Добавить</button>
+        </div>
+        </div>
+        
+      </div>
+
+      </div>
+      <div class="conteyner3"></div>
+      </div>
+  </body>
+  <script src="./js/alltextscripts.js"></script> <!--запись из 3 полей в 4 -->
+  <script src="./js/emergencysave.js"></script>  <!--сохранение значения поля 4 в браузер, для защиты от потери данных при нс(непрд.сит) -->
+  <script src="./js/clear.js"></script> <!--очистка лок хранилища браузера от emergencysave.js  -->
+  <script src="./js/tableadd.js"></script> <!--Добавление элемента строк таблицы-->
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./js/jquery-te-1.4.0.min.js" charset="utf-8"></script>
+  <script>
+    $('.jqte-test').jqte();
+    
+    // settings of status
+    var jqteStatus = true;
+    $(".status").click(function()
+    {
+      jqteStatus = jqteStatus ? false : true;
+      $('.jqte-test').jqte({"status" : jqteStatus})
+    });
+  </script>
+      <iframe style="width: 500px;height: 191px;border-radius: 0;" src=//sekundomer.net/?widget=true&name=&bg=1d4671&bgBody=e8e8e8&colorH1=595959&pattern=none&cr=show&nb=show" frameborder="0"></iframe>
+
+</html>
+
+<!--input4.value = "Верстка"+"\n" + input1.value + "\n" + input2.value + "\n" + input3.value;
